@@ -1,0 +1,41 @@
+.markdown-body {
+    user-select: text;
+    margin-top: 2em;
+
+    * {
+        margin-bottom: 1em;
+        user-select: text;
+    }
+
+    ul, ol {
+        margin-left: 1.2em;
+        list-style: initial;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    pre {
+        position: relative;
+    }
+
+    .copy-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        font-size: 1.4rem;
+        color: #f2f2f2;
+
+        &::hover {
+            color: #f6f6f6;
+        }
+    }
+}

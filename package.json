@@ -1,0 +1,67 @@
+{
+  "name": "aicoder.tools",
+  "version": "1.0.5",
+  "description": "aicoder.tools",
+  "main": "main.js",
+  "scripts": {
+    "electron": "set NODE_ENV=development&&electron .",
+    "build:css": "sass resources/css:assets/css",
+    "watch:css": "sass --watch resources/css:assets/css",
+    "build": "electron-builder",
+    "start": "concurrently --raw \"npm run electron\" \"npm run watch:css\""
+  },
+  "build": {
+    "appId": "com.aicoder.tools",
+    "win": {
+      "target": {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      },
+      "icon": "assets/images/icon.png"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm"
+      ],
+      "category": "Development",
+      "icon": "assets/images/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "deleteAppDataOnUninstall": true
+    },
+    "directories": {
+      "buildResources": "assets"
+    },
+    "files": [
+      "assets/**/*",
+      "resources/js/**/*",
+      "main.js",
+      "index.html",
+      "renderer.js"
+    ]
+  },
+  "homepage": "https://github.com/huynhnd6/aicoder.tools",
+  "author": {
+    "name": "Huynh Nguyen",
+    "email": "huynhnd6@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.3",
+    "electron-store": "^8.2.0",
+    "highlight.js": "^11.10.0",
+    "marked": "^13.0.2",
+    "marked-highlight": "^2.1.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^31.1.0",
+    "electron-builder": "^24.13.3",
+    "electron-reload": "^2.0.0-alpha.1",
+    "sass": "^1.77.6"
+  }
+}

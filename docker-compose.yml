@@ -1,0 +1,12 @@
+services:
+  node:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - node-modules:/app/node_modules
+    command: npm run build
+
+volumes:
+  node-modules:
