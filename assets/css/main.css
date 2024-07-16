@@ -135,9 +135,10 @@ svg {
 .page-folder-header {
   font-size: 1.4rem;
   display: flex;
+  align-items: center;
 }
-.page-folder-header #ai-coder-folder-name {
-  font-size: 1rem;
+.page-folder-header span {
+  font-size: 0.9rem;
   text-wrap: nowrap;
   overflow-x: hidden;
   margin-right: 1rem;

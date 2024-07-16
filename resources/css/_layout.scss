@@ -65,9 +65,10 @@
         &-header {
             font-size: 1.4rem;
             display: flex;
+            align-items: center;
 
-            #ai-coder-folder-name {
-                font-size: 1rem;
+            span {
+                font-size: .9rem;
                 text-wrap: nowrap;
                 overflow-x: hidden;
                 margin-right: 1rem;

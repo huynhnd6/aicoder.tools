@@ -44,6 +44,9 @@
       "renderer.js"
     ]
   },
+  "imports": {
+    "#root/*.js": "./*.js"
+  },
   "homepage": "https://github.com/huynhnd6/aicoder.tools",
   "author": {
     "name": "Huynh Nguyen",
