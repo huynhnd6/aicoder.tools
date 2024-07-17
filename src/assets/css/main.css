@@ -1,0 +1,375 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../../assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  scrollbar-width: none;
+  user-select: none;
+}
+
+body {
+  background-color: #222;
+  color: #f2f2f2;
+  font-size: 14px;
+}
+
+a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+summary {
+  cursor: pointer;
+  user-select: none;
+}
+
+ol {
+  list-style: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input, textarea, select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 5px;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  padding: 5px 15px;
+}
+
+table {
+  width: 100%;
+}
+table thead th {
+  border-bottom: 2px solid #444;
+}
+table th, table td {
+  text-align: left;
+  padding: 5px;
+}
+
+svg {
+  fill: currentColor;
+  stroke: currentColor;
+  width: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+#menuBar {
+  background-color: #111;
+  height: 100vh;
+  width: 15%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  padding-top: 30px;
+  z-index: 9999;
+}
+#menuBar ol li {
+  padding: 0 15px;
+  line-height: 2;
+  border-bottom: 1px solid #333;
+}
+#menuBar ol li.active {
+  background-color: #333;
+}
+#menuBar ol li:last-child {
+  border: 0;
+}
+#menuBar ol li ul {
+  height: 0;
+}
+
+#folderBar {
+  background-color: #111;
+  height: 100vh;
+  width: 25%;
+  left: 15%;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  padding: 30px 15px;
+  z-index: 9999;
+  border-left: 1px solid #333;
+  color: #f2f2f2;
+}
+#folderBar-header {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+#folderBar-header span {
+  font-size: 0.9rem;
+  text-wrap: nowrap;
+  overflow-x: hidden;
+  margin-right: 1rem;
+  text-overflow: ellipsis;
+}
+#folderBar-header a {
+  margin-left: auto;
+  cursor: pointer;
+}
+#folderBar-footer {
+  position: fixed;
+  bottom: 0;
+  line-height: 2;
+  background-color: #111;
+}
+#folderBar ol li {
+  cursor: pointer;
+  line-height: 2;
+  text-wrap: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+#folderBar ol li.active {
+  background-color: #333;
+}
+
+#content {
+  height: 100vh;
+  width: 60%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  padding: 45px 15px 15px;
+}
+
+.page-notification {
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  background: #111;
+  padding: 15px;
+  line-height: 1.4;
+  transform: translateX(100%);
+  max-width: 60%;
+  transition: transform 0.3s ease-in-out;
+}
+.page-notification.show {
+  transform: translateX(0);
+}
+
+.ai-content-result {
+  position: relative;
+  padding: 30px 0;
+  margin-top: 15px;
+}
+.ai-content-result .ai-content-copy {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.ai-content-result .ai-content-body ul {
+  margin-left: 1rem;
+}
+.ai-content-result .ai-content-body * {
+  margin-bottom: 1em;
+  user-select: text;
+}
+.ai-content-result .copy-container {
+  padding: 15px;
+  background: #333;
+  cursor: pointer;
+}
+
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*!
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #c9d1d9;
+  background: #0d1117;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #ff7b72;
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #d2a8ff;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #79c0ff;
+}
+
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #a5d6ff;
+}
+
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #ffa657;
+}
+
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #8b949e;
+}
+
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #7ee787;
+}
+
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #c9d1d9;
+}
+
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #1f6feb;
+  font-weight: bold;
+}
+
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #f2cc60;
+}
+
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #c9d1d9;
+  font-style: italic;
+}
+
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #c9d1d9;
+  font-weight: bold;
+}
+
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #aff5b4;
+  background-color: #033a16;
+}
+
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #ffdcd7;
+  background-color: #67060c;
+}
+
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+}
+
+.markdown-body {
+  user-select: text;
+  margin-top: 2em;
+}
+.markdown-body * {
+  margin-bottom: 1em;
+  user-select: text;
+}
+.markdown-body ul, .markdown-body ol {
+  margin-left: 1.2em;
+  list-style: initial;
+}
+.markdown-body h2 {
+  font-size: 1.2rem;
+}
+.markdown-body h3 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.markdown-body pre {
+  position: relative;
+}
+.markdown-body .copy-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.4rem;
+  color: #f2f2f2;
+}
+.markdown-body .copy-button::hover {
+  color: #f6f6f6;
+}
+
+/*# sourceMappingURL=main.css.map */

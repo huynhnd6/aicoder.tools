@@ -1,12 +1,12 @@
 {
   "name": "aicoder.tools",
-  "version": "1.0.5",
+  "version": "0.0.1",
   "description": "aicoder.tools",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "electron": "set NODE_ENV=development&&electron .",
-    "build:css": "sass resources/css:assets/css",
-    "watch:css": "sass --watch resources/css:assets/css",
+    "build:css": "sass scss:src/assets/css",
+    "watch:css": "sass --watch scss:src/assets/css",
     "build": "electron-builder",
     "start": "concurrently --raw \"npm run electron\" \"npm run watch:css\""
   },

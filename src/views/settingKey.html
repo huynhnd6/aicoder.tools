@@ -1,0 +1,13 @@
+<input type="text" id="apiKey" placeholder="Enter your API key">
+<button id="saveApiKey">Save</button>
+<script>
+    const { Options } = require('#root/src/js/app/utils.js')
+
+    const input = document.getElementById('apiKey')
+    input.value = Options.get('apiKey') || ''
+    const button = document.getElementById('saveApiKey')
+    button.addEventListener('click', () => {
+        alert('save')
+        Options.set('apiKey', input.value)
+    })
+</script>
